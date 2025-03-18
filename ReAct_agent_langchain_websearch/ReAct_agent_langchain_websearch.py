@@ -4,8 +4,9 @@ from langchain.chat_models import ChatOpenAI
 import requests
 from bs4 import BeautifulSoup
 
+openai_api_key=st.secrets["OPENAI_API_KEY"]
 # Initialize OpenAI model
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.7, max_tokens=1000)  # Increase max_tokens for longer responses
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.7, max_tokens=1000, openai_api_key=openai_api_key)  # Increase max_tokens for longer responses
 
 # Define Bing Search Scraper (No API Key Needed)
 def bing_search_scraper(query):
